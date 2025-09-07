@@ -23,4 +23,3 @@ def start_files():
     files = walk_directory(path_source)
     copy_files(files, path_dest)
 
-start_files()

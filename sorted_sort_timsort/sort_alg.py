@@ -53,36 +53,37 @@ def merge(left, right):
 def random_data(size):
     return [random.randint(0, size) for _ in range(size)]
 
+
 for i in range(0, 4):
     insertion_stmt = "insertion_sort(data.copy())"
     merge_stmt = "merge_sort(data.copy())"
     timsort_stmt = "sorted(data.copy())"
     setup_code = "data=random_data({size})"
     if i == 0:
-        insertion_timeit = timeit.timeit(insertion_stmt, globals=globals(), setup=setup_code.format(size=1000), number=1)
-        merge_timeit = timeit.timeit(merge_stmt, globals=globals(), setup=setup_code.format(size=1000), number=1)
-        sorted_timeit = timeit.timeit(timsort_stmt, globals=globals(), setup=setup_code.format(size=1000), number=1)
+        insertion_timeit = timeit.timeit(insertion_stmt, globals=globals(), setup=setup_code.format(size=1000), number=1000)
+        merge_timeit = timeit.timeit(merge_stmt, globals=globals(), setup=setup_code.format(size=1000), number=2000)
+        sorted_timeit = timeit.timeit(timsort_stmt, globals=globals(), setup=setup_code.format(size=1000), number=2000)
         print(f"Insertion sort : {insertion_timeit:.6f} сек Розмір 1000")
         print(f"Merge sort: {merge_timeit:.6f} сек Розмір 1000")
         print(f"Sorted sort: {sorted_timeit:.6f} сек Розмір 1000")
     if i == 1:
-        insertion_timeit = timeit.timeit(insertion_stmt, globals=globals(), setup=setup_code.format(size=10000), number=1)
-        merge_timeit = timeit.timeit(merge_stmt, globals=globals(), setup=setup_code.format(size=10000), number=1)
-        sorted_timeit = timeit.timeit(timsort_stmt, globals=globals(), setup=setup_code.format(size=10000), number=1)
+        insertion_timeit = timeit.timeit(insertion_stmt, globals=globals(), setup=setup_code.format(size=10000), number=100)
+        merge_timeit = timeit.timeit(merge_stmt, globals=globals(), setup=setup_code.format(size=10000), number=500)
+        sorted_timeit = timeit.timeit(timsort_stmt, globals=globals(), setup=setup_code.format(size=10000), number=500)
         print(f"Insertion sort : {insertion_timeit:.6f} сек Розмір 10000")
         print(f"Merge sort: {merge_timeit:.6f} сек Розмір 10000")
         print(f"Sorted sort: {sorted_timeit:.6f} сек Розмір 10000")
     if i == 2:
-        insertion_timeit = timeit.timeit(insertion_stmt, globals=globals(), setup=setup_code.format(size=100000), number=1)
-        merge_timeit = timeit.timeit(merge_stmt, globals=globals(), setup=setup_code.format(size=100000), number=1)
-        sorted_timeit = timeit.timeit(timsort_stmt, globals=globals(), setup=setup_code.format(size=100000), number=1)
+        insertion_timeit = timeit.timeit(insertion_stmt, globals=globals(), setup=setup_code.format(size=100000), number=10)
+        merge_timeit = timeit.timeit(merge_stmt, globals=globals(), setup=setup_code.format(size=100000), number=50)
+        sorted_timeit = timeit.timeit(timsort_stmt, globals=globals(), setup=setup_code.format(size=100000), number=50)
         print(f"Insertion sort : {insertion_timeit:.6f} сек Розмір 100000")
         print(f"Merge sort: {merge_timeit:.6f} сек Розмір 100000")
         print(f"Sorted sort: {sorted_timeit:.6f} сек Розмір 100000")
-    if i == 3:
-        insertion_timeit = timeit.timeit(insertion_stmt, globals=globals(), setup=setup_code.format(size=1000000), number=1)
-        merge_timeit = timeit.timeit(merge_stmt, globals=globals(), setup=setup_code.format(size=1000000), number=1)
-        sorted_timeit = timeit.timeit(timsort_stmt, globals=globals(), setup=setup_code.format(size=1000000), number=1)
-        print(f"Insertion sort : {insertion_timeit:.6f} сек Розмір 1000000")
-        print(f"Merge sort: {merge_timeit:.6f} сек Розмір 1000000")
-        print(f"Sorted sort: {sorted_timeit:.6f} сек Розмір 1000000")
+    #if i == 3:
+    #    insertion_timeit = timeit.timeit(insertion_stmt, globals=globals(), setup=setup_code.format(size=1000000), number=1)
+    #    merge_timeit = timeit.timeit(merge_stmt, globals=globals(), setup=setup_code.format(size=1000000), number=1)
+    #    sorted_timeit = timeit.timeit(timsort_stmt, globals=globals(), setup=setup_code.format(size=1000000), number=1)
+    #    print(f"Insertion sort : {insertion_timeit:.6f} сек Розмір ")
+    #    print(f"Merge sort: {merge_timeit:.6f} сек Розмір 1000000")
+    #    print(f"Sorted sort: {sorted_timeit:.6f} сек Розмір 1000000")
