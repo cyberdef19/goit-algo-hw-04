@@ -1,4 +1,4 @@
-from fractal.fractal import paint_koch
+from fractal import paint_koch
 
 
 depth = int(input("Вкажіть глибину промальовки сніжинки Коха: "))

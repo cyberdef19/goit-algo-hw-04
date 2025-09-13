@@ -1,7 +1,5 @@
 import sys
-
-from Filer.copy_files import copy_files
-from Filer.walk_directory import walk_directory
+from Filer.walk_directory import walk_directory, copy_files
 
 
 def start_files():

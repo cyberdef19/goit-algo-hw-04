@@ -18,9 +18,11 @@ def paint_koch(length: int, depth: int):
     t = turtle.Turtle()
     t.speed(0)
     t.penup()
-    t.goto(-length / 2, 0)
+    t.goto(-length / 2, length / 3)
     t.pendown()
 
-    koch_segment(t, length, depth)
+    for i in range(3):
+        koch_segment(t, length, depth)
+        t.right(120)
     window.mainloop()
 
